@@ -40,6 +40,10 @@ export const Go2Contact = styled.section`
     padding: ${theme.spacings.medium};
     margin-bottom: ${theme.spacings.giant};
 
+    a {
+      text-decoration: none;
+    }
+
     @media (max-width: ${theme.breakPoints.mobileL}) {
       background-position-x: center;
     }

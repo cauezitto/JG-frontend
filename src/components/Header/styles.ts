@@ -151,6 +151,13 @@ export const SearchWrapper = styled.div`
 
       .cart {
         color: ${theme.colors.yellow300};
+        display: flex;
+        a {
+          color: ${theme.colors.yellow300};
+          margin: 0;
+          padding: 0;
+          margin-bottom: -6px;
+        }
       }
 
       .menu {

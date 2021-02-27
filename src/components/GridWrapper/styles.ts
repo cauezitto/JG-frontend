@@ -21,5 +21,11 @@ export const Wrapper = styled.div`
     @media (max-width: ${theme.breakPoints.laptopS}) {
       grid-template-columns: 1fr 1fr;
     }
+
+    /* @media (max-width: ${theme.breakPoints.mobileM}) {
+
+      display: flex;
+      flex-direction: column;
+    } */
   `}
 `

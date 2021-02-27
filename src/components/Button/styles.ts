@@ -40,9 +40,8 @@ export const Wrapper = styled.button<ButtonProps>`
     `}
     ${outline &&
     css`
-      border: 2px solid;
-      border-color: ${theme.colors[fill]};
-      background: none;
+      border: 2px black solid;
+      background: transparent;
     `}
   `}
 `

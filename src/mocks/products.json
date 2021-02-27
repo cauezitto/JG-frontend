@@ -1,22 +1,782 @@
 [
   {
-    "name": "Camisa Flamengo New Ray",
-    "price": 180,
-    "image": "https://static.netshoes.com.br/produtos/camisa-flamengo-new-ray/06/D40-1812-006/D40-1812-006_zoom2.jpg?ts=1594417336&ims=326x"
+    "id": 3,
+    "nome": "corta vento adidas",
+    "slug": "corta-vento-adidas",
+    "preco": 200,
+    "published_at": "2021-02-12T16:48:40.000Z",
+    "created_at": "2021-02-12T16:45:23.000Z",
+    "updated_at": "2021-02-12T18:43:31.000Z",
+    "kid": false,
+    "descricao": "<p>Corta vendo legal stonkoso e majestoso</p>",
+    "marca": {
+      "id": 3,
+      "nome": "adidas",
+      "published_at": "2021-02-12T15:29:54.000Z",
+      "created_at": "2021-02-12T15:29:51.000Z",
+      "updated_at": "2021-02-12T18:43:31.000Z",
+      "produto": 3
+    },
+    "tamanho": {
+      "id": 3,
+      "adulto": {
+        "id": 4,
+        "teste": null,
+        "P": true,
+        "M": true,
+        "G": true,
+        "GG": true
+      },
+      "kid": null
+    },
+    "galeria": [
+      {
+        "id": 4,
+        "name": "corta-vento-manchester-united-azul-19-201-8fc4d4d4cb6d57d13215717252787424-1024-1024_1024x1024@2x.webp",
+        "alternativeText": "",
+        "caption": "",
+        "width": 1024,
+        "height": 1024,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_corta-vento-manchester-united-azul-19-201-8fc4d4d4cb6d57d13215717252787424-1024-1024_1024x1024@2x.webp",
+            "hash": "thumbnail_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 156,
+            "height": 156,
+            "size": 2.5,
+            "path": null,
+            "url": "/uploads/thumbnail_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74.webp"
+          },
+          "large": {
+            "name": "large_corta-vento-manchester-united-azul-19-201-8fc4d4d4cb6d57d13215717252787424-1024-1024_1024x1024@2x.webp",
+            "hash": "large_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 1000,
+            "height": 1000,
+            "size": 27.84,
+            "path": null,
+            "url": "/uploads/large_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74.webp"
+          },
+          "medium": {
+            "name": "medium_corta-vento-manchester-united-azul-19-201-8fc4d4d4cb6d57d13215717252787424-1024-1024_1024x1024@2x.webp",
+            "hash": "medium_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 750,
+            "height": 750,
+            "size": 18.81,
+            "path": null,
+            "url": "/uploads/medium_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74.webp"
+          },
+          "small": {
+            "name": "small_corta-vento-manchester-united-azul-19-201-8fc4d4d4cb6d57d13215717252787424-1024-1024_1024x1024@2x.webp",
+            "hash": "small_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 500,
+            "height": 500,
+            "size": 10.99,
+            "path": null,
+            "url": "/uploads/small_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74.webp"
+          }
+        },
+        "hash": "corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74",
+        "ext": ".webp",
+        "mime": "image/webp",
+        "size": 32.16,
+        "url": "/uploads/corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74.webp",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_at": "2021-02-12T16:02:43.000Z",
+        "updated_at": "2021-02-12T16:02:43.000Z"
+      },
+      {
+        "id": 5,
+        "name": "33ff3d6d_1024x1024@2x.webp",
+        "alternativeText": "",
+        "caption": "",
+        "width": 1536,
+        "height": 2048,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_33ff3d6d_1024x1024@2x.webp",
+            "hash": "thumbnail_33ff3d6d_1024x1024_2x_0ea475789c",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 117,
+            "height": 156,
+            "size": 4.36,
+            "path": null,
+            "url": "/uploads/thumbnail_33ff3d6d_1024x1024_2x_0ea475789c.webp"
+          },
+          "large": {
+            "name": "large_33ff3d6d_1024x1024@2x.webp",
+            "hash": "large_33ff3d6d_1024x1024_2x_0ea475789c",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 750,
+            "height": 1000,
+            "size": 53.12,
+            "path": null,
+            "url": "/uploads/large_33ff3d6d_1024x1024_2x_0ea475789c.webp"
+          },
+          "medium": {
+            "name": "medium_33ff3d6d_1024x1024@2x.webp",
+            "hash": "medium_33ff3d6d_1024x1024_2x_0ea475789c",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 563,
+            "height": 750,
+            "size": 36.97,
+            "path": null,
+            "url": "/uploads/medium_33ff3d6d_1024x1024_2x_0ea475789c.webp"
+          },
+          "small": {
+            "name": "small_33ff3d6d_1024x1024@2x.webp",
+            "hash": "small_33ff3d6d_1024x1024_2x_0ea475789c",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 375,
+            "height": 500,
+            "size": 21.68,
+            "path": null,
+            "url": "/uploads/small_33ff3d6d_1024x1024_2x_0ea475789c.webp"
+          }
+        },
+        "hash": "33ff3d6d_1024x1024_2x_0ea475789c",
+        "ext": ".webp",
+        "mime": "image/webp",
+        "size": 129.38,
+        "url": "/uploads/33ff3d6d_1024x1024_2x_0ea475789c.webp",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_at": "2021-02-12T16:04:48.000Z",
+        "updated_at": "2021-02-12T16:04:48.000Z"
+      }
+    ],
+    "cover": {
+      "id": 4,
+      "name": "corta-vento-manchester-united-azul-19-201-8fc4d4d4cb6d57d13215717252787424-1024-1024_1024x1024@2x.webp",
+      "alternativeText": "",
+      "caption": "",
+      "width": 1024,
+      "height": 1024,
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_corta-vento-manchester-united-azul-19-201-8fc4d4d4cb6d57d13215717252787424-1024-1024_1024x1024@2x.webp",
+          "hash": "thumbnail_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74",
+          "ext": ".webp",
+          "mime": "image/webp",
+          "width": 156,
+          "height": 156,
+          "size": 2.5,
+          "path": null,
+          "url": "/uploads/thumbnail_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74.webp"
+        },
+        "large": {
+          "name": "large_corta-vento-manchester-united-azul-19-201-8fc4d4d4cb6d57d13215717252787424-1024-1024_1024x1024@2x.webp",
+          "hash": "large_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74",
+          "ext": ".webp",
+          "mime": "image/webp",
+          "width": 1000,
+          "height": 1000,
+          "size": 27.84,
+          "path": null,
+          "url": "/uploads/large_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74.webp"
+        },
+        "medium": {
+          "name": "medium_corta-vento-manchester-united-azul-19-201-8fc4d4d4cb6d57d13215717252787424-1024-1024_1024x1024@2x.webp",
+          "hash": "medium_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74",
+          "ext": ".webp",
+          "mime": "image/webp",
+          "width": 750,
+          "height": 750,
+          "size": 18.81,
+          "path": null,
+          "url": "/uploads/medium_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74.webp"
+        },
+        "small": {
+          "name": "small_corta-vento-manchester-united-azul-19-201-8fc4d4d4cb6d57d13215717252787424-1024-1024_1024x1024@2x.webp",
+          "hash": "small_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74",
+          "ext": ".webp",
+          "mime": "image/webp",
+          "width": 500,
+          "height": 500,
+          "size": 10.99,
+          "path": null,
+          "url": "/uploads/small_corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74.webp"
+        }
+      },
+      "hash": "corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74",
+      "ext": ".webp",
+      "mime": "image/webp",
+      "size": 32.16,
+      "url": "/uploads/corta_vento_manchester_united_azul_19_201_8fc4d4d4cb6d57d13215717252787424_1024_1024_1024x1024_2x_df8d998c74.webp",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_at": "2021-02-12T16:02:43.000Z",
+      "updated_at": "2021-02-12T16:02:43.000Z"
+    },
+    "categorias": [
+      {
+        "id": 3,
+        "nome": "masculino",
+        "published_at": "2021-02-12T15:11:08.000Z",
+        "created_at": "2021-02-12T15:10:49.000Z",
+        "updated_at": "2021-02-12T18:25:16.000Z",
+        "produto": null
+      },
+      {
+        "id": 5,
+        "nome": "Agasalho",
+        "published_at": "2021-02-12T16:59:12.000Z",
+        "created_at": "2021-02-12T16:59:10.000Z",
+        "updated_at": "2021-02-12T18:25:16.000Z",
+        "produto": null
+      }
+    ]
   },
   {
-    "name": "Camisa Flamengo New Ray",
-    "price": 180,
-    "image": "https://static.netshoes.com.br/produtos/camisa-flamengo-new-ray/06/D40-1812-006/D40-1812-006_zoom2.jpg?ts=1594417336&ims=326x"
+    "id": 4,
+    "nome": "Camisa Flamengo Home 20-21",
+    "slug": "camisa-flamengo-home-20-21",
+    "preco": 150,
+    "published_at": "2021-02-12T16:52:33.000Z",
+    "created_at": "2021-02-12T16:52:27.000Z",
+    "updated_at": "2021-02-12T18:44:47.000Z",
+    "kid": false,
+    "descricao": "<p>Outro patamar de manto! Chegou a nova Camisa do Flamengo I 20/21 Torcedor Adidas. Inspirada no uniforme de 1987 e 1992, a nova camisa titular do Flamengo traz listras Rubro-Negras mais grossas e com trechos do hino do Mengão estampados. Tua glória é lutar! Garanta a sua Camisa I do Flamengo 2020 Adidas!</p>",
+    "marca": {
+      "id": 3,
+      "nome": "adidas",
+      "published_at": "2021-02-12T15:29:54.000Z",
+      "created_at": "2021-02-12T15:29:51.000Z",
+      "updated_at": "2021-02-12T18:43:31.000Z",
+      "produto": 3
+    },
+    "tamanho": {
+      "id": 4,
+      "adulto": {
+        "id": 5,
+        "teste": null,
+        "P": true,
+        "M": true,
+        "G": false,
+        "GG": true
+      },
+      "kid": null
+    },
+    "galeria": [
+      {
+        "id": 6,
+        "name": "asdas_1024x1024@2x.webp",
+        "alternativeText": "",
+        "caption": "",
+        "width": 482,
+        "height": 560,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_asdas_1024x1024@2x.webp",
+            "hash": "thumbnail_asdas_1024x1024_2x_3d31b67b12",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 134,
+            "height": 156,
+            "size": 2.09,
+            "path": null,
+            "url": "/uploads/thumbnail_asdas_1024x1024_2x_3d31b67b12.webp"
+          },
+          "small": {
+            "name": "small_asdas_1024x1024@2x.webp",
+            "hash": "small_asdas_1024x1024_2x_3d31b67b12",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 430,
+            "height": 500,
+            "size": 8.3,
+            "path": null,
+            "url": "/uploads/small_asdas_1024x1024_2x_3d31b67b12.webp"
+          }
+        },
+        "hash": "asdas_1024x1024_2x_3d31b67b12",
+        "ext": ".webp",
+        "mime": "image/webp",
+        "size": 9.94,
+        "url": "/uploads/asdas_1024x1024_2x_3d31b67b12.webp",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_at": "2021-02-12T16:18:22.000Z",
+        "updated_at": "2021-02-12T16:18:22.000Z"
+      },
+      {
+        "id": 7,
+        "name": "fla20-21home2_110x110@2x.webp",
+        "alternativeText": "",
+        "caption": "",
+        "width": 165,
+        "height": 220,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_fla20-21home2_110x110@2x.webp",
+            "hash": "thumbnail_fla20_21home2_110x110_2x_3fc2a25ed5",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 117,
+            "height": 156,
+            "size": 2.32,
+            "path": null,
+            "url": "/uploads/thumbnail_fla20_21home2_110x110_2x_3fc2a25ed5.webp"
+          }
+        },
+        "hash": "fla20_21home2_110x110_2x_3fc2a25ed5",
+        "ext": ".webp",
+        "mime": "image/webp",
+        "size": 4.32,
+        "url": "/uploads/fla20_21home2_110x110_2x_3fc2a25ed5.webp",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_at": "2021-02-12T16:22:57.000Z",
+        "updated_at": "2021-02-12T16:22:57.000Z"
+      },
+      {
+        "id": 9,
+        "name": "fla20-21home_1024x1024@2x.webp",
+        "alternativeText": "",
+        "caption": "",
+        "width": 1536,
+        "height": 2048,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_fla20-21home_1024x1024@2x.webp",
+            "hash": "thumbnail_fla20_21home_1024x1024_2x_29ac0705b6",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 117,
+            "height": 156,
+            "size": 1.65,
+            "path": null,
+            "url": "/uploads/thumbnail_fla20_21home_1024x1024_2x_29ac0705b6.webp"
+          },
+          "large": {
+            "name": "large_fla20-21home_1024x1024@2x.webp",
+            "hash": "large_fla20_21home_1024x1024_2x_29ac0705b6",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 750,
+            "height": 1000,
+            "size": 29.13,
+            "path": null,
+            "url": "/uploads/large_fla20_21home_1024x1024_2x_29ac0705b6.webp"
+          },
+          "medium": {
+            "name": "medium_fla20-21home_1024x1024@2x.webp",
+            "hash": "medium_fla20_21home_1024x1024_2x_29ac0705b6",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 563,
+            "height": 750,
+            "size": 18.04,
+            "path": null,
+            "url": "/uploads/medium_fla20_21home_1024x1024_2x_29ac0705b6.webp"
+          },
+          "small": {
+            "name": "small_fla20-21home_1024x1024@2x.webp",
+            "hash": "small_fla20_21home_1024x1024_2x_29ac0705b6",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 375,
+            "height": 500,
+            "size": 9.1,
+            "path": null,
+            "url": "/uploads/small_fla20_21home_1024x1024_2x_29ac0705b6.webp"
+          }
+        },
+        "hash": "fla20_21home_1024x1024_2x_29ac0705b6",
+        "ext": ".webp",
+        "mime": "image/webp",
+        "size": 124.62,
+        "url": "/uploads/fla20_21home_1024x1024_2x_29ac0705b6.webp",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_at": "2021-02-12T16:22:58.000Z",
+        "updated_at": "2021-02-12T16:22:58.000Z"
+      },
+      {
+        "id": 8,
+        "name": "fla20-21home5_1024x1024@2x.webp",
+        "alternativeText": "",
+        "caption": "",
+        "width": 1536,
+        "height": 2048,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_fla20-21home5_1024x1024@2x.webp",
+            "hash": "thumbnail_fla20_21home5_1024x1024_2x_e3187a868f",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 117,
+            "height": 156,
+            "size": 1.36,
+            "path": null,
+            "url": "/uploads/thumbnail_fla20_21home5_1024x1024_2x_e3187a868f.webp"
+          },
+          "large": {
+            "name": "large_fla20-21home5_1024x1024@2x.webp",
+            "hash": "large_fla20_21home5_1024x1024_2x_e3187a868f",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 750,
+            "height": 1000,
+            "size": 25.95,
+            "path": null,
+            "url": "/uploads/large_fla20_21home5_1024x1024_2x_e3187a868f.webp"
+          },
+          "medium": {
+            "name": "medium_fla20-21home5_1024x1024@2x.webp",
+            "hash": "medium_fla20_21home5_1024x1024_2x_e3187a868f",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 563,
+            "height": 750,
+            "size": 16.75,
+            "path": null,
+            "url": "/uploads/medium_fla20_21home5_1024x1024_2x_e3187a868f.webp"
+          },
+          "small": {
+            "name": "small_fla20-21home5_1024x1024@2x.webp",
+            "hash": "small_fla20_21home5_1024x1024_2x_e3187a868f",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "width": 375,
+            "height": 500,
+            "size": 7.9,
+            "path": null,
+            "url": "/uploads/small_fla20_21home5_1024x1024_2x_e3187a868f.webp"
+          }
+        },
+        "hash": "fla20_21home5_1024x1024_2x_e3187a868f",
+        "ext": ".webp",
+        "mime": "image/webp",
+        "size": 113.31,
+        "url": "/uploads/fla20_21home5_1024x1024_2x_e3187a868f.webp",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_at": "2021-02-12T16:22:58.000Z",
+        "updated_at": "2021-02-12T16:22:58.000Z"
+      }
+    ],
+    "cover": {
+      "id": 6,
+      "name": "asdas_1024x1024@2x.webp",
+      "alternativeText": "",
+      "caption": "",
+      "width": 482,
+      "height": 560,
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_asdas_1024x1024@2x.webp",
+          "hash": "thumbnail_asdas_1024x1024_2x_3d31b67b12",
+          "ext": ".webp",
+          "mime": "image/webp",
+          "width": 134,
+          "height": 156,
+          "size": 2.09,
+          "path": null,
+          "url": "/uploads/thumbnail_asdas_1024x1024_2x_3d31b67b12.webp"
+        },
+        "small": {
+          "name": "small_asdas_1024x1024@2x.webp",
+          "hash": "small_asdas_1024x1024_2x_3d31b67b12",
+          "ext": ".webp",
+          "mime": "image/webp",
+          "width": 430,
+          "height": 500,
+          "size": 8.3,
+          "path": null,
+          "url": "/uploads/small_asdas_1024x1024_2x_3d31b67b12.webp"
+        }
+      },
+      "hash": "asdas_1024x1024_2x_3d31b67b12",
+      "ext": ".webp",
+      "mime": "image/webp",
+      "size": 9.94,
+      "url": "/uploads/asdas_1024x1024_2x_3d31b67b12.webp",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_at": "2021-02-12T16:18:22.000Z",
+      "updated_at": "2021-02-12T16:18:22.000Z"
+    },
+    "categorias": [
+      {
+        "id": 1,
+        "nome": "time nacional",
+        "published_at": "2021-02-12T15:09:51.000Z",
+        "created_at": "2021-02-12T15:09:45.000Z",
+        "updated_at": "2021-02-12T16:52:29.000Z",
+        "produto": 4
+      },
+      {
+        "id": 3,
+        "nome": "masculino",
+        "published_at": "2021-02-12T15:11:08.000Z",
+        "created_at": "2021-02-12T15:10:49.000Z",
+        "updated_at": "2021-02-12T18:25:16.000Z",
+        "produto": null
+      }
+    ]
   },
   {
-    "name": "Camisa Flamengo New Ray",
-    "price": 180,
-    "image": "https://static.netshoes.com.br/produtos/camisa-flamengo-new-ray/06/D40-1812-006/D40-1812-006_zoom2.jpg?ts=1594417336&ims=326x"
-  },
-  {
-    "name": "Camisa Flamengo New Ray",
-    "price": 180,
-    "image": "https://static.netshoes.com.br/produtos/camisa-flamengo-new-ray/06/D40-1812-006/D40-1812-006_zoom2.jpg?ts=1594417336&ims=326x"
+    "id": 5,
+    "nome": "Agasalho Corta Vento Nike",
+    "slug": "agasalho-corta-vento-nike",
+    "preco": 200,
+    "published_at": "2021-02-12T16:58:47.000Z",
+    "created_at": "2021-02-12T16:58:44.000Z",
+    "updated_at": "2021-02-12T18:45:17.000Z",
+    "kid": false,
+    "descricao": "<p>O inverno não te abala! Continue se desafiando e chegue longe com a Jaqueta Feminina Nike Swoosh Run. Feita em nylon e com gola alta para excelente cobertura, a jaqueta esportiva é impermeável, conta com bolso frontal para dar fácil acesso a pequenos objetos e tecido flexível, que acompanha seus movimentos na corrida e nos exercícios. Garanta a sua Jaqueta de correr da Nike!</p>",
+    "marca": {
+      "id": 2,
+      "nome": "NIKE",
+      "published_at": "2021-02-12T15:29:36.000Z",
+      "created_at": "2021-02-12T15:29:34.000Z",
+      "updated_at": "2021-02-12T18:25:16.000Z",
+      "produto": null
+    },
+    "tamanho": {
+      "id": 5,
+      "adulto": {
+        "id": 6,
+        "teste": null,
+        "P": true,
+        "M": true,
+        "G": true,
+        "GG": false
+      },
+      "kid": null
+    },
+    "galeria": [
+      {
+        "id": 10,
+        "name": "eec011f0_1024x1024@2x.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 949,
+        "height": 1043,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_eec011f0_1024x1024@2x.jpg",
+            "hash": "thumbnail_eec011f0_1024x1024_2x_3089d31cc7",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 142,
+            "height": 156,
+            "size": 4.05,
+            "path": null,
+            "url": "/uploads/thumbnail_eec011f0_1024x1024_2x_3089d31cc7.jpg"
+          },
+          "large": {
+            "name": "large_eec011f0_1024x1024@2x.jpg",
+            "hash": "large_eec011f0_1024x1024_2x_3089d31cc7",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 910,
+            "height": 1000,
+            "size": 55.36,
+            "path": null,
+            "url": "/uploads/large_eec011f0_1024x1024_2x_3089d31cc7.jpg"
+          },
+          "medium": {
+            "name": "medium_eec011f0_1024x1024@2x.jpg",
+            "hash": "medium_eec011f0_1024x1024_2x_3089d31cc7",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 682,
+            "height": 750,
+            "size": 36.76,
+            "path": null,
+            "url": "/uploads/medium_eec011f0_1024x1024_2x_3089d31cc7.jpg"
+          },
+          "small": {
+            "name": "small_eec011f0_1024x1024@2x.jpg",
+            "hash": "small_eec011f0_1024x1024_2x_3089d31cc7",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 455,
+            "height": 500,
+            "size": 20.33,
+            "path": null,
+            "url": "/uploads/small_eec011f0_1024x1024_2x_3089d31cc7.jpg"
+          }
+        },
+        "hash": "eec011f0_1024x1024_2x_3089d31cc7",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 60.31,
+        "url": "/uploads/eec011f0_1024x1024_2x_3089d31cc7.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_at": "2021-02-12T16:58:17.000Z",
+        "updated_at": "2021-02-12T16:58:17.000Z"
+      },
+      {
+        "id": 11,
+        "name": "3709b359_1024x1024@2x.jpg",
+        "alternativeText": "",
+        "caption": "",
+        "width": 1536,
+        "height": 2048,
+        "formats": {
+          "thumbnail": {
+            "name": "thumbnail_3709b359_1024x1024@2x.jpg",
+            "hash": "thumbnail_3709b359_1024x1024_2x_93add3220a",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 117,
+            "height": 156,
+            "size": 5,
+            "path": null,
+            "url": "/uploads/thumbnail_3709b359_1024x1024_2x_93add3220a.jpg"
+          },
+          "large": {
+            "name": "large_3709b359_1024x1024@2x.jpg",
+            "hash": "large_3709b359_1024x1024_2x_93add3220a",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 750,
+            "height": 1000,
+            "size": 81.66,
+            "path": null,
+            "url": "/uploads/large_3709b359_1024x1024_2x_93add3220a.jpg"
+          },
+          "medium": {
+            "name": "medium_3709b359_1024x1024@2x.jpg",
+            "hash": "medium_3709b359_1024x1024_2x_93add3220a",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 563,
+            "height": 750,
+            "size": 53.91,
+            "path": null,
+            "url": "/uploads/medium_3709b359_1024x1024_2x_93add3220a.jpg"
+          },
+          "small": {
+            "name": "small_3709b359_1024x1024@2x.jpg",
+            "hash": "small_3709b359_1024x1024_2x_93add3220a",
+            "ext": ".jpg",
+            "mime": "image/jpeg",
+            "width": 375,
+            "height": 500,
+            "size": 29.16,
+            "path": null,
+            "url": "/uploads/small_3709b359_1024x1024_2x_93add3220a.jpg"
+          }
+        },
+        "hash": "3709b359_1024x1024_2x_93add3220a",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 247.01,
+        "url": "/uploads/3709b359_1024x1024_2x_93add3220a.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "created_at": "2021-02-12T16:58:29.000Z",
+        "updated_at": "2021-02-12T16:58:29.000Z"
+      }
+    ],
+    "cover": {
+      "id": 10,
+      "name": "eec011f0_1024x1024@2x.jpg",
+      "alternativeText": "",
+      "caption": "",
+      "width": 949,
+      "height": 1043,
+      "formats": {
+        "thumbnail": {
+          "name": "thumbnail_eec011f0_1024x1024@2x.jpg",
+          "hash": "thumbnail_eec011f0_1024x1024_2x_3089d31cc7",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "width": 142,
+          "height": 156,
+          "size": 4.05,
+          "path": null,
+          "url": "/uploads/thumbnail_eec011f0_1024x1024_2x_3089d31cc7.jpg"
+        },
+        "large": {
+          "name": "large_eec011f0_1024x1024@2x.jpg",
+          "hash": "large_eec011f0_1024x1024_2x_3089d31cc7",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "width": 910,
+          "height": 1000,
+          "size": 55.36,
+          "path": null,
+          "url": "/uploads/large_eec011f0_1024x1024_2x_3089d31cc7.jpg"
+        },
+        "medium": {
+          "name": "medium_eec011f0_1024x1024@2x.jpg",
+          "hash": "medium_eec011f0_1024x1024_2x_3089d31cc7",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "width": 682,
+          "height": 750,
+          "size": 36.76,
+          "path": null,
+          "url": "/uploads/medium_eec011f0_1024x1024_2x_3089d31cc7.jpg"
+        },
+        "small": {
+          "name": "small_eec011f0_1024x1024@2x.jpg",
+          "hash": "small_eec011f0_1024x1024_2x_3089d31cc7",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "width": 455,
+          "height": 500,
+          "size": 20.33,
+          "path": null,
+          "url": "/uploads/small_eec011f0_1024x1024_2x_3089d31cc7.jpg"
+        }
+      },
+      "hash": "eec011f0_1024x1024_2x_3089d31cc7",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 60.31,
+      "url": "/uploads/eec011f0_1024x1024_2x_3089d31cc7.jpg",
+      "previewUrl": null,
+      "provider": "local",
+      "provider_metadata": null,
+      "created_at": "2021-02-12T16:58:17.000Z",
+      "updated_at": "2021-02-12T16:58:17.000Z"
+    },
+    "categorias": [
+      {
+        "id": 3,
+        "nome": "masculino",
+        "published_at": "2021-02-12T15:11:08.000Z",
+        "created_at": "2021-02-12T15:10:49.000Z",
+        "updated_at": "2021-02-12T18:25:16.000Z",
+        "produto": null
+      },
+      {
+        "id": 5,
+        "nome": "Agasalho",
+        "published_at": "2021-02-12T16:59:12.000Z",
+        "created_at": "2021-02-12T16:59:10.000Z",
+        "updated_at": "2021-02-12T18:25:16.000Z",
+        "produto": null
+      }
+    ]
   }
 ]

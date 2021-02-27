@@ -15,19 +15,23 @@ import Input from 'components/Input'
 import Link from 'next/link'
 import MenuMobile from 'components/MenuMobile'
 import { useState } from 'react'
+import { useCookies } from 'react-cookie'
+import jwt from 'jsonwebtoken'
 
 const Header = () => {
+  const [cookie, setCookie] = useCookies(['user'])
   const [show, setShow] = useState(false)
+
   return (
     <S.Wrapper>
       <PaddingWrapper>
         <S.ContactWrapper>
           <div className="social-media">
-            <S.ExteralLink href="https://www.instagram.com/jeffersonegisele/">
+            <S.ExteralLink href="https://www.facebook.com/jgemporiodamalha">
               <FaFacebookF />
             </S.ExteralLink>
 
-            <S.ExteralLink href="https://www.facebook.com/jgemporiodamalha">
+            <S.ExteralLink href="https://www.instagram.com/jeffersonegisele/">
               <FaInstagram />
             </S.ExteralLink>
           </div>
@@ -58,7 +62,11 @@ const Header = () => {
         </S.ContactWrapper>
         <S.SearchWrapper>
           {/* <div className="logo"> */}
-          <S.Logo src="/img/logo3.png" alt="JG" />
+          <Link href="/">
+            <a>
+              <S.Logo src="/img/logo3.png" alt="JG" />
+            </a>
+          </Link>
           {/* </div> */}
 
           <S.SearchInputWrapper className="desktop">
@@ -71,11 +79,24 @@ const Header = () => {
 
           <div className="right mobile">
             <div className="login">
-              Login &nbsp; <IoIosArrowDown />
+              <Link href="/dashboard/pedidos">
+                <S.ExteralLink>
+                  {cookie.token ? 'Perfil' : 'Login'} &nbsp; <IoIosArrowDown />
+                </S.ExteralLink>
+              </Link>
             </div>
 
             <div className="favorite">
-              <FiHeart />
+              <S.ExteralLink
+                iconColor="yellow300"
+                href={
+                  cookie.token
+                    ? `/favoritos/${(jwt.decode(cookie.token) as any)?.id}`
+                    : '/login'
+                }
+              >
+                <FiHeart />
+              </S.ExteralLink>
             </div>
           </div>
 
@@ -91,7 +112,11 @@ const Header = () => {
             </div>
             &nbsp;
             <div className="cart">
-              <FiShoppingCart />
+              <Link href="/carrinho">
+                <a>
+                  <FiShoppingCart />
+                </a>
+              </Link>
             </div>
           </div>
 
@@ -160,7 +185,13 @@ const Header = () => {
                 </li>
 
                 <li>
-                  <Link href="favoritos">
+                  <Link
+                    href={
+                      cookie.token
+                        ? `/favoritos/${(jwt.decode(cookie.token) as any)?.id}`
+                        : '/login'
+                    }
+                  >
                     <S.ExteralLink>Meus Favoritos</S.ExteralLink>
                   </Link>
                 </li>

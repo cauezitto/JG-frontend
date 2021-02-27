@@ -1,7 +1,5 @@
-import Header from 'components/Header'
-import Main from 'components/Main'
+import { initializeApollo } from 'utils/apollo'
 import Banner from 'components/Banner'
-
 import DefaultTemplate from 'templates/Default'
 import AboutSection from 'components/AboutSection'
 import Brands from 'components/Brands'
@@ -14,8 +12,16 @@ import GridWrapper from 'components/GridWrapper'
 import Costumers from 'components/Costumers'
 import { HorizontalPaddingWrapper } from 'styles/pages/home'
 import brandsMock from 'mocks/brands.json'
+import { useStateContext } from 'context/index'
+import { GetStaticProps } from 'next'
+import { ProductProps } from 'types/ProductProps'
+import { getTierProducts } from 'graphql/queryes/produtos'
+type HomeProps = {
+  produtos: ProductProps[]
+}
 
-export default function Home() {
+export default function Home({ produtos }: HomeProps) {
+  const { server } = useStateContext()
   return (
     <DefaultTemplate>
       <br />
@@ -32,12 +38,13 @@ export default function Home() {
           NOSSOS PRODUTOS
         </Heading>
         <GridWrapper>
-          {productsMock.map((product, index) => (
+          {produtos.map((product, index) => (
             <div className="center" key={index}>
               <ProductCard
-                name={product.name}
-                price={product.price}
-                image={product.image}
+                name={product.nome}
+                price={product.preco}
+                image={server + product.cover.url}
+                slug={product.slug}
               />
             </div>
           ))}
@@ -46,9 +53,29 @@ export default function Home() {
       <AboutSection />
       <PaddingWrapper>
         <HorizontalPaddingWrapper padding="xxxlarge">
-          <Costumers costumers={costumersMock} />
+          <Costumers
+            costumers={costumersMock.map((costumer) => ({
+              name: costumer.nome,
+              img: server + costumer.foto.url,
+              testimony: costumer.depoimento
+            }))}
+          />
         </HorizontalPaddingWrapper>
       </PaddingWrapper>
     </DefaultTemplate>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const client = initializeApollo()
+
+  const { data } = await client.query({ query: getTierProducts })
+
+  // console.log(data.destaque.produtos[0])
+  return {
+    props: {
+      produtos: data.destaque.produtos.map((produto: any) => produto.produto)
+    },
+    revalidate: 60
+  }
 }

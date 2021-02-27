@@ -6,7 +6,8 @@ export const Wrapper = styled.label<Props>`
     color = 'black',
     fontSize = 'large',
     font = 'roboto',
-    fontWeight = 'normal'
+    fontWeight = 'normal',
+    margin
   }) => css`
     display: flex;
     flex-direction: column;
@@ -14,5 +15,9 @@ export const Wrapper = styled.label<Props>`
     color: ${theme.colors[color]};
     font-family: ${theme.font.family[font]};
     font-weight: ${theme.font[fontWeight]};
+    ${margin &&
+    css`
+      margin: ${margin};
+    `}
   `}
 `

@@ -3,7 +3,7 @@ import { Color, FontSize, FontWeight } from 'types/style'
 export type ButtonProps = {
   children?: React.ReactNode | string
   fill?: Color
-  color?: 'white100' | 'white200' | 'white300' | 'black'
+  color?: Color
   radius?: number
   font?: 'ubuntu' | 'roboto' | 'robotoCondensed'
   outline?: boolean
@@ -11,6 +11,7 @@ export type ButtonProps = {
   fontSize?: FontSize
   onClick?: VoidFunction
   fontWeight?: FontWeight
+  className?: string
 }
 
 const Button = (props: ButtonProps) => (

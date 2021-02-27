@@ -6,6 +6,7 @@ export type Props = {
   font?: Font
   color?: Color
   fontSize?: FontSize
+  margin?: string
   children: string | React.ReactNode[]
 }
 

@@ -4,7 +4,7 @@ import * as S from './styles'
 export type InputProps = {
   value?: string
   placeholder?: string
-  onChange?: VoidFunction
+  onChange?: (value: any) => void
   borderColor?: Color
   fill?: Color
   width?: number
@@ -18,6 +18,8 @@ export type InputProps = {
   readOnly?: boolean
   radius?: number
   required?: boolean
+  maxLength?: number
+  margin?: string
 }
 
 const Input = (props: InputProps) => {

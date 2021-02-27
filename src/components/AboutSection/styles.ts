@@ -37,6 +37,15 @@ export const SubWrapper = styled.div`
         width: 37%;
       }
     }
+
+    @media (max-width: ${theme.breakPoints.mobileM}) {
+      h2 {
+        font-size: ${theme.font.sizes.small};
+      }
+      img {
+        width: 37%;
+      }
+    }
   `}
 `
 

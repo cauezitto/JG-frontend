@@ -11,7 +11,8 @@ export const Wrapper = styled.a<LinkProps>`
     fontWeight = 'normal',
     font = 'roboto',
     textDecoration = 'underline',
-    iconSize
+    iconSize,
+    justify
   }) => css`
     text-decoration: none;
     display: flex;
@@ -23,6 +24,11 @@ export const Wrapper = styled.a<LinkProps>`
     font-size: ${theme.font.sizes[fontSize]};
     color: ${theme.colors[color]};
     text-align: ${textAlign};
+    ${justify &&
+    css`
+      display: flex;
+      justify-content: ${justify};
+    `}
     svg {
       font-size: ${theme.font.sizes.xlarge};
       color: ${theme.colors[iconColor]};

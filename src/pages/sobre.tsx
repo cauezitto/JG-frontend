@@ -5,7 +5,7 @@ import Heading from 'components/Heading'
 import History from 'components/History'
 import PaddingWrapper from 'components/PaddingWrapper'
 import SkillCard from 'components/SkillCard'
-// import { HorizontalPaddingWrapper } from 'styles/pages/home'
+import Link from 'next/link'
 import {
   SkillCardsWrapper,
   VirtuesWrapper,
@@ -90,9 +90,18 @@ const Sobre = () => {
           Fale com nossa equipe
         </Heading>
 
-        <Button fill="red100" radius={10} fontSize="large" fontWeight="bold">
-          Falar conosco
-        </Button>
+        <Link href="/contato">
+          <a>
+            <Button
+              fill="red100"
+              radius={10}
+              fontSize="large"
+              fontWeight="bold"
+            >
+              Falar conosco
+            </Button>
+          </a>
+        </Link>
       </Go2Contact>
     </DefaultTeamplate>
   )

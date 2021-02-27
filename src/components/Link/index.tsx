@@ -1,5 +1,12 @@
 import React from 'react'
-import { Color, FontSize, FontWeight, Font, TextAlign } from 'types/style'
+import {
+  Color,
+  FontSize,
+  FontWeight,
+  Font,
+  TextAlign,
+  Justify
+} from 'types/style'
 import * as S from './styles'
 
 export type LinkProps = {
@@ -13,6 +20,8 @@ export type LinkProps = {
   textDecoration?: 'underline' | 'none'
   href?: string
   iconSize?: FontSize
+  target?: string
+  justify?: Justify
 }
 
 const Link = (props: LinkProps) => (

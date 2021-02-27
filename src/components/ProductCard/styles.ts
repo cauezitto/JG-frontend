@@ -1,7 +1,7 @@
 import { BiFont } from 'react-icons/bi'
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.a`
   ${({ theme }) => css`
     position: relative;
     width: 30rem;
@@ -24,7 +24,12 @@ export const Wrapper = styled.div`
 
     @media (max-width: ${theme.breakPoints.mobileL}) {
       width: 180px;
-      /* height: 250px; */
+      height: 350px;
+    }
+
+    @media (max-width: ${theme.breakPoints.mobileM}) {
+      width: 160px;
+      height: 400px;
     }
   `}
 `
@@ -64,7 +69,7 @@ export const ImageWrapper = styled.div`
     overflow: hidden;
 
     @media (max-width: ${theme.breakPoints.mobileL}) {
-      height: 19rem;
+      height: 17rem;
       /* height: 250px; */
     }
 

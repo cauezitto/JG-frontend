@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "username": "caue",
+    "status": "aprovado",
+    "total": 300,
+    "envio": 20,
+    "published_at": "2021-02-23T19:11:24.000Z",
+    "created_at": "2021-02-23T19:11:18.000Z",
+    "updated_at": "2021-02-24T16:25:29.000Z",
+    "cupom": null,
+    "recebimento": "0202-03-01T00:00:00.000Z",
+    "usuario": null,
+    "link": "http://pagamento",
+    "endereco": {
+      "id": 1,
+      "cep": "03923150",
+      "rua": "Alberto Lupo",
+      "bairro": "Parque dos bancários",
+      "cidade": "São Paulo",
+      "UF": "SP",
+      "numero": "272"
+    },
+    "produtos": [
+      {
+        "id": 1,
+        "nome": "Camiseta do flamengo",
+        "preco": 300,
+        "quantidade": 1,
+        "tamanho": "M",
+        "personalizacao": {
+          "id": 1,
+          "personalizar": true,
+          "nome": "Cauezão",
+          "numero": "22"
+        },
+        "galeria": [
+          {
+            "id": 6,
+            "name": "asdas_1024x1024@2x.webp",
+            "alternativeText": "",
+            "caption": "",
+            "width": 482,
+            "height": 560,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_asdas_1024x1024@2x.webp",
+                "hash": "thumbnail_asdas_1024x1024_2x_3d31b67b12",
+                "ext": ".webp",
+                "mime": "image/webp",
+                "width": 134,
+                "height": 156,
+                "size": 2.09,
+                "path": null,
+                "url": "/uploads/thumbnail_asdas_1024x1024_2x_3d31b67b12.webp"
+              },
+              "small": {
+                "name": "small_asdas_1024x1024@2x.webp",
+                "hash": "small_asdas_1024x1024_2x_3d31b67b12",
+                "ext": ".webp",
+                "mime": "image/webp",
+                "width": 430,
+                "height": 500,
+                "size": 8.3,
+                "path": null,
+                "url": "/uploads/small_asdas_1024x1024_2x_3d31b67b12.webp"
+              }
+            },
+            "hash": "asdas_1024x1024_2x_3d31b67b12",
+            "ext": ".webp",
+            "mime": "image/webp",
+            "size": 9.94,
+            "url": "/uploads/asdas_1024x1024_2x_3d31b67b12.webp",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "created_at": "2021-02-12T16:18:22.000Z",
+            "updated_at": "2021-02-12T16:18:22.000Z"
+          }
+        ]
+      }
+    ],
+    "dados_de_envio": {
+      "id": 1,
+      "valor": 30,
+      "rastreio": "ORD-20210232939"
+    }
+  }
+]

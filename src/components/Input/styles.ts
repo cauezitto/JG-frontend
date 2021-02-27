@@ -14,7 +14,8 @@ const style = ({
   font = 'roboto',
   fill = 'white100',
   borderWidth,
-  radius
+  radius,
+  margin
 }: StyleInputProps) => css`
   padding: ${theme.spacings.xxsmall};
   border-color: ${theme.colors[borderColor]};
@@ -22,6 +23,10 @@ const style = ({
   border-style: solid;
   font-size: ${theme.font.sizes[fontSize]};
   font-family: ${theme.font.family[font]};
+  ${margin &&
+  css`
+    margin: ${margin};
+  `}
   ${radius &&
   css`
     border-radius: ${radius}px;

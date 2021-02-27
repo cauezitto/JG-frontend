@@ -131,13 +131,13 @@ const Footer = () => (
 
             <S.SocialMediaContainer>
               <div className="social-media">
-                <S.NavigationLink>
+                <S.NavigationLink href="https://www.facebook.com/jgemporiodamalha">
                   <FiFacebook size={20} />
                 </S.NavigationLink>
               </div>
 
               <div className="social-media">
-                <S.NavigationLink>
+                <S.NavigationLink href="https://www.instagram.com/jeffersonegisele/">
                   <FaInstagram size={20} />
                 </S.NavigationLink>
               </div>

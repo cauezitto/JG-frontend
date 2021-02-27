@@ -2,6 +2,7 @@ import * as S from './styles'
 import PaddingWrapper from 'components/PaddingWrapper'
 import Heading from 'components/Heading'
 import Button from 'components/Button'
+import Link from 'next/link'
 const AboutSection = () => (
   <S.Wrapper>
     <PaddingWrapper>
@@ -25,14 +26,18 @@ const AboutSection = () => (
           </Heading>
           <br />
           <div className="button-wrapper">
-            <Button
-              fill="gray200"
-              radius={50}
-              color="white100"
-              fontSize="small"
-            >
-              CONHECER
-            </Button>
+            <Link href="/sobre">
+              <a>
+                <Button
+                  fill="gray200"
+                  radius={50}
+                  color="white100"
+                  fontSize="small"
+                >
+                  CONHECER
+                </Button>
+              </a>
+            </Link>
           </div>
         </S.TextWrapper>
       </S.SubWrapper>

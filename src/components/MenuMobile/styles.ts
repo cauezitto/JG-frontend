@@ -8,6 +8,9 @@ export const Wrapper = styled.div`
     z-index: 10;
     /* max-width: 500px; */
     /* overflow: hidden; */
+    a {
+      text-decoration: none;
+    }
   `}
 `
 

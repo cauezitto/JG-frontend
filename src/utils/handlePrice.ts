@@ -2,7 +2,6 @@ export default {
   priceToNumber(priceString: string) {
     const price = priceString.replace('R$', '').replace(',', '.')
     const priceNumber = Number(price)
-
     return priceNumber
   },
 

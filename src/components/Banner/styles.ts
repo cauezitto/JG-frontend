@@ -42,5 +42,6 @@ export const Paragraph = styled.p`
     align-items: center;
     font-weight: ${theme.font.semiBold};
     font-size: ${theme.font.sizes.large};
+    text-align: center;
   `}
 `
