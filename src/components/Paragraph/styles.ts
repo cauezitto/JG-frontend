@@ -3,9 +3,9 @@ import { Props } from '.'
 export const Wrapper = styled.p<Props>`
   ${({
     theme,
-    color = 'darkGray',
+    color = 'gray300',
     fontSize = 'medium',
-    font = 'ubuntuCondensed',
+    font = 'roboto',
     justify = 'flex-start',
     textAlign = 'left',
     fontWeight = 'normal',

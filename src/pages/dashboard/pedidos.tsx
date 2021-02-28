@@ -80,12 +80,7 @@ const Pedidos = ({ orders }: Props) => {
           Meus Pedidos
         </Heading>
 
-        <Paragraph
-          margin="20px 0"
-          textAlign="center"
-          fontSize="extra"
-          font="manjari"
-        >
+        <Paragraph margin="20px 0" textAlign="center" fontSize="extra">
           Acesse seu pedidos logo abaixo
         </Paragraph>
 

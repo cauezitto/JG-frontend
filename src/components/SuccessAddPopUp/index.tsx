@@ -14,10 +14,11 @@ const SuccessAddPopUp = (props: Props) => (
     <S.SubWrapper>
       <FaHeart size={45} color="#E4271B" />
       <Heading
-        color="cyan"
+        color="brown"
         font="ubuntu"
         fontWeight="semiBold"
         fontSize="xxxlarge"
+        lineBottom={false}
       >
         Produto Adicionado!
       </Heading>
@@ -29,12 +30,9 @@ const SuccessAddPopUp = (props: Props) => (
       >
         Parabéns! você adicionou o produto a sua lista de desejos
       </Paragraph>
-      <Button
-        onClick={props.onClose}
-        text="Beleza! c:"
-        fontSize="large"
-        fontFamily="ubuntu"
-      />
+      <Button onClick={props.onClose} fontSize="large">
+        Beleza
+      </Button>
     </S.SubWrapper>
   </S.Wrapper>
 )

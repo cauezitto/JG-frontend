@@ -6,7 +6,7 @@ export default {
   },
 
   priceNumberToReadblePrice(valor: number) {
-    const floatValor = valor.toFixed(2).replace('.', ',')
+    const floatValor = valor?.toFixed(2).replace('.', ',')
     const readblePrice = `R$ ${floatValor}`
     return readblePrice
   },

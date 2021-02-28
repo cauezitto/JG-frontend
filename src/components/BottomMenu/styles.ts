@@ -33,7 +33,6 @@ export const Wrapper = styled.nav`
     a,
     button {
       text-decoration: none;
-      /* color: ${theme.colors.white}; */
       font-size: ${theme.font.sizes.extra};
     }
 

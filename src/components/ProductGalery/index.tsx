@@ -57,7 +57,7 @@ const ProductGalery = ({ images, index = 0 }: GaleryProps) => {
   return (
     <S.Wrapper>
       <S.PreviewsWrapper className="desktop">
-        {images.map((image, index) => (
+        {images?.map((image, index) => (
           <S.Preview
             key={index}
             image={server + image.url}
@@ -82,7 +82,7 @@ const ProductGalery = ({ images, index = 0 }: GaleryProps) => {
 
       <div className="mobile">
         <Slider {...settings}>
-          {images.map((image, index) => (
+          {images?.map((image, index) => (
             <img src={server + image.url} key={index} />
           ))}
         </Slider>

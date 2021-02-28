@@ -34,6 +34,7 @@ import { getProductBySlug } from 'graphql/queryes/produtos'
 import { initializeApollo } from 'utils/apollo'
 
 type ProductProps = {
+  id: number
   nome: string
   preco: number
   descricao: string
@@ -132,7 +133,7 @@ const Produto = ({
     const products = [...cart.products, product]
     let total = 0.0
 
-    products.map((item) => {
+    products?.map((item) => {
       total = total + item.preco * item.quant
     })
 
@@ -154,6 +155,10 @@ const Produto = ({
     setSize('')
   }, [slug])
 
+  if (!id) {
+    return <>Pagina inválida</>
+  }
+
   return (
     <DefaultTemplate>
       <PaymentBanner />
@@ -169,7 +174,7 @@ const Produto = ({
                 textAlign="left"
                 margin="0 0 10px 0"
               >
-                {nome.toUpperCase()}
+                {nome?.toUpperCase()}
               </Heading>
               <ProductReference>
                 <b>Referencia:</b> {slug}
@@ -250,7 +255,7 @@ const Produto = ({
                   <div>tamanho criança</div>
                 ) : (
                   <>
-                    {tamanho.adulto?.P && (
+                    {tamanho?.adulto?.P && (
                       <SizeButton
                         selected={size === 'P' && true}
                         className="size-button"
@@ -262,7 +267,7 @@ const Produto = ({
                         P
                       </SizeButton>
                     )}
-                    {tamanho.adulto?.M && (
+                    {tamanho?.adulto?.M && (
                       <SizeButton
                         selected={size === 'M' && true}
                         className="size-button"
@@ -274,7 +279,7 @@ const Produto = ({
                         M
                       </SizeButton>
                     )}
-                    {tamanho.adulto?.G && (
+                    {tamanho?.adulto?.G && (
                       <SizeButton
                         selected={size === 'G' && true}
                         className="size-button"
@@ -286,7 +291,7 @@ const Produto = ({
                         G
                       </SizeButton>
                     )}
-                    {tamanho.adulto?.GG && (
+                    {tamanho?.adulto?.GG && (
                       <SizeButton
                         selected={size === 'GG' && true}
                         className="size-button"
@@ -329,7 +334,7 @@ const Produto = ({
                         <th>Prazo</th>
                       </tr>
 
-                      {shippingOptions.map((option) => (
+                      {shippingOptions?.map((option) => (
                         <tr key={option?.id}>
                           <td>{option?.name} </td>
                           <td>
@@ -363,7 +368,7 @@ const Produto = ({
         </Heading>
 
         <GridWrapper>
-          {productsMock.map((product, index) => (
+          {productsMock?.map((product, index) => (
             <ProductCard
               key={index}
               name={product.nome}
@@ -388,7 +393,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const products = productsMock
 
   return {
-    paths: products.map((product) => {
+    paths: products?.map((product) => {
       return { params: { slug: product.slug } }
     }),
     fallback: true
@@ -398,10 +403,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   // console.log(params)
   if (!params) {
-    const product = await productsMock[0]
     return {
-      props: product,
-      revalidate: 30
+      redirect: {
+        destination: '/',
+        permanent: false
+      }
     }
   }
 
@@ -419,7 +425,6 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   })
 
   const { produtos } = response.data
-  console.log(produtos[0])
 
   return {
     props: produtos[0],

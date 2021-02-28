@@ -1,6 +1,7 @@
 export type FontSize =
   | 'xsmall'
   | 'small'
+  | 'medium'
   | 'large'
   | 'xlarge'
   | 'xxlarge'

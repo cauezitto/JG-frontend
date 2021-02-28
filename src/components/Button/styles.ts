@@ -5,7 +5,7 @@ export const Wrapper = styled.button<ButtonProps>`
   ${({
     theme,
     fill = 'brown',
-    color = 'white300',
+    color = 'white100',
     radius = 0,
     font = 'roboto',
     outline,

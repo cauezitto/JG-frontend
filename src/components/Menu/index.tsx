@@ -38,8 +38,7 @@ const Menu = () => {
         <Paragraph
           justify="center"
           textAlign="center"
-          color="white"
-          font="ubuntuCondensed"
+          color="white100"
           fontSize="xxlarge"
         >
           Olá, {cookie.user ? String(cookie.user?.username).split(' ')[0] : ' '}
@@ -82,7 +81,7 @@ const Menu = () => {
       <div className="logout-wrapper">
         <FiPower onClick={logout} />
 
-        <Paragraph color="white" fontSize="xlarge" margin="10px 0">
+        <Paragraph color="white100" fontSize="xlarge" margin="10px 0">
           Deslogar
         </Paragraph>
       </div>

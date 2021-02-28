@@ -1,31 +1,21 @@
+import {
+  Color,
+  FontSize,
+  Justify,
+  TextAlign,
+  Font,
+  FontWeight
+} from 'types/style'
 import * as S from './styles'
 
 export type Props = {
   children: string | React.ReactNode
-  fontWeight?: 'normal' | 'semiBold' | 'bold'
-  color?:
-    | 'black'
-    | 'orange'
-    | 'gray'
-    | 'mediumGray'
-    | 'darkGray'
-    | 'cyan'
-    | 'white'
-  fontSize?:
-    | 'xsmall'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'xlarge'
-    | 'xxlarge'
-    | 'xxxlarge'
-    | 'extra'
-    | 'max'
-    | 'xmax'
-    | 'xxmax'
-  font?: 'manjari' | 'ubuntu' | 'ubuntuCondensed'
-  justify?: 'flex-start' | 'center' | 'flex-end'
-  textAlign?: 'right' | 'center' | 'right'
+  fontWeight?: FontWeight
+  color?: Color
+  fontSize?: FontSize
+  font?: Font
+  justify?: Justify
+  textAlign?: TextAlign
   margin?: string
 }
 
