@@ -148,7 +148,7 @@ const Login = () => {
                   height={50}
                   borderColor="white100"
                   value={login}
-                  onChange={(e) => setLogin(e.target.value)}
+                  onChange={(e) => setLogin(e.target.value.toLowerCase())}
                 />
               </Label>
             </div>

@@ -39,6 +39,7 @@ const Carrinho = ({ tier }: Props) => {
   const [cashBackPercent, setCashBackPercent] = useState(0)
   const [cupom, setCupom] = useState('')
   const [cookie, setCookie] = useCookies(['user'])
+  const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
   const cupomCheck = async () => {
@@ -195,6 +196,12 @@ const Carrinho = ({ tier }: Props) => {
       return
     }
 
+    if (isLoading) {
+      return
+    }
+
+    setIsLoading(true)
+
     const order = await api
       .post(
         '/pedido',
@@ -210,10 +217,12 @@ const Carrinho = ({ tier }: Props) => {
           products: [],
           total: 0
         })
+        setIsLoading(false)
         router.push(order.data.url)
       })
       .catch((err) => {
         alert('algo deu errado, por favor tente novamente')
+        setIsLoading(false)
       })
   }
 
@@ -405,7 +414,7 @@ const Carrinho = ({ tier }: Props) => {
                 radius={10}
                 onClick={buy}
               >
-                Finalizar compra
+                {isLoading ? 'Processando...' : 'Finalizar compra'}
               </Button>
             </div>
 
