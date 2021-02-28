@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: grid;
-    width: 100%;
+    /* width: 100%; */
     align-items: center;
     align-content: center;
     justify-content: space-between;
