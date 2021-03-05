@@ -11,6 +11,7 @@ import { useStateContext } from 'context'
 import { useRouter } from 'next/router'
 
 import { useCookies } from 'react-cookie'
+import { ProductProps } from 'types/ProductProps'
 
 const Login = () => {
   const [login, setLogin] = useState('')
@@ -32,12 +33,17 @@ const Login = () => {
         const { data } = response
         const { user } = data
 
+        console.log(user)
+
         const userData = {
           username: user.username,
           email: user.email,
           phone: user.phone,
           endereco: user.endereco,
-          foto: user.foto?.url
+          foto: user.foto?.url,
+          favorites: user.favoritos.produtos.map(
+            (produto: ProductProps) => produto.id
+          )
         }
 
         setToken(data.jwt)

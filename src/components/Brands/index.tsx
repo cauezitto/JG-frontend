@@ -4,7 +4,7 @@ import Slider from 'react-slick'
 export type BrandsProps = {
   brands: Array<{
     url: string
-    alt: string
+    alternativeText: string
   }>
 }
 
@@ -49,7 +49,10 @@ const Brands = ({ brands }: BrandsProps) => (
     <Slider {...settings}>
       {brands.map((brand, index) => (
         <S.BrandWrapper key={index}>
-          <img src={brand.url} alt={brand.alt} />
+          <img
+            src={process.env.NEXT_PUBLIC_SERVER_HOST + brand.url}
+            alt={brand.alternativeText}
+          />
         </S.BrandWrapper>
       ))}
     </Slider>

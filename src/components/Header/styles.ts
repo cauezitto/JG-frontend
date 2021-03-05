@@ -343,6 +343,13 @@ export const DropMenu = styled.div`
     }
 
     ul li {
+      display: flex;
+      flex-direction: column;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: ${theme.colors.gray300};
       margin-bottom: ${theme.spacings.xxsmall};
       text-align: center;
       cursor: pointer;

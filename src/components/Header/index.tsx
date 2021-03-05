@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import PaddingWrapper from 'components/PaddingWrapper'
 import Button from 'components/Button'
 import * as S from './styles'
@@ -14,13 +15,33 @@ import { IoIosArrowDown } from 'react-icons/io'
 import Input from 'components/Input'
 import Link from 'next/link'
 import MenuMobile from 'components/MenuMobile'
-import { useState } from 'react'
 import { useCookies } from 'react-cookie'
 import jwt from 'jsonwebtoken'
+import { useRouter } from 'next/router'
 
-const Header = () => {
+export type HeaderProps = {
+  categorias: Array<{
+    nome: string
+  }>
+}
+
+const Header = ({ categorias = [] }: HeaderProps) => {
   const [cookie, setCookie] = useCookies(['user'])
+  const { push, query, reload } = useRouter()
   const [show, setShow] = useState(false)
+  const { nome_contains } = query
+  const [search, setSearch] = useState(nome_contains)
+
+  const handleFilter = async () => {
+    await push({
+      pathname: '/loja',
+      query: {
+        ...query,
+        nome_contains: search
+      }
+    })
+    // reload()
+  }
 
   return (
     <S.Wrapper>
@@ -37,11 +58,11 @@ const Header = () => {
           </div>
 
           <div className="contact">
-            <S.ExteralLink href="tel: 97365-1131" className="desktop">
-              <FiPhone /> &nbsp; (11) 97365-1131
+            <S.ExteralLink href="tel: 98127-6336" className="desktop">
+              <FiPhone /> &nbsp; (11) 98127-6336
             </S.ExteralLink>
 
-            <S.ExteralLink href="tel: 97365-1131" className="mobile">
+            <S.ExteralLink href="tel: 98127-6336" className="mobile">
               <FiPhone />
             </S.ExteralLink>
             <div className="divisor" />
@@ -70,9 +91,12 @@ const Header = () => {
           {/* </div> */}
 
           <S.SearchInputWrapper className="desktop">
-            <Input />
+            <Input
+              value={search as string}
+              onChange={(e) => setSearch(e.target.value)}
+            />
             &nbsp;
-            <Button radius={10}>
+            <Button onClick={handleFilter} radius={10}>
               <FiSearch />
             </Button>
           </S.SearchInputWrapper>
@@ -149,11 +173,18 @@ const Header = () => {
 
               <S.DropMenu className="menu">
                 <ul>
-                  <li>Camisetas</li>
-                  <li>Agasalhos</li>
-                  <li>Agasalhos</li>
-                  <li>Agasalhos</li>
-                  <li>Agasalhos</li>
+                  {categorias.map((categoria, index) => (
+                    <li key={index}>
+                      <Link
+                        href={`/loja?categorias=${categoria.nome.replace(
+                          ' ',
+                          '+'
+                        )}`}
+                      >
+                        <a>{categoria.nome}</a>
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </S.DropMenu>
             </S.Dropdown>
@@ -167,8 +198,8 @@ const Header = () => {
                 </li>
 
                 <li>
-                  <Link href="/loja/camisetas">
-                    <S.ExteralLink>Camisetas</S.ExteralLink>
+                  <Link href="/loja">
+                    <S.ExteralLink>Explorar</S.ExteralLink>
                   </Link>
                 </li>
 
@@ -199,16 +230,19 @@ const Header = () => {
             </S.Nav>
 
             <div className="input-wrapper mobile">
-              <Input />
+              <Input
+                value={search as string}
+                onChange={(e) => setSearch(e.target.value)}
+              />
 
-              <Button radius={5}>
+              <Button radius={5} onClick={handleFilter}>
                 <FiSearch />
               </Button>
             </div>
           </S.NavSubWrapper>
         </PaddingWrapper>
         <div className={`menu-mobile ${show ? '' : 'hide'} mobile`}>
-          <MenuMobile />
+          <MenuMobile categorias={categorias} />
         </div>
       </S.NavWrapper>
     </S.Wrapper>

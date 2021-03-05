@@ -17,6 +17,7 @@ import cep from 'cep-promise'
 
 import { useCookies } from 'react-cookie'
 import { cepMask } from 'utils/masks'
+import { ProductProps } from 'types/ProductProps'
 
 type AddressProps = {
   street: string
@@ -92,7 +93,10 @@ const Cadastro = () => {
           email: user.email,
           phone: user.phone,
           endereco: user.endereco,
-          photo: user.foto?.url
+          photo: user.foto?.url,
+          favorites: user.favoritos.produtos.map(
+            (produto: ProductProps) => produto.id
+          )
         }
 
         setToken(data.jwt)

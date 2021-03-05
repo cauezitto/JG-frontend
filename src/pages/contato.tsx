@@ -13,10 +13,18 @@ import {
 import { HorizontalPaddingWrapper } from 'styles/pages/home'
 import Link from 'components/Link'
 import { FiPhone, FiMail, FiFacebook, FiInstagram } from 'react-icons/fi'
+import { GetStaticProps } from 'next'
+import { getCategorias } from 'graphql/queryes/categorias'
+import { initializeApollo } from 'utils/apollo'
 
-const Sobre = () => {
+type AboutPageProps = {
+  categorias: Array<{
+    nome: string
+  }>
+}
+const Sobre = ({ categorias = [] }: AboutPageProps) => {
   return (
-    <DefaultTemplate>
+    <DefaultTemplate categorias={categorias}>
       <Banner
         img="/img/contato/banner.png"
         title="FALE CONOSCO"
@@ -86,6 +94,22 @@ const Sobre = () => {
       </PaddingWrapper>
     </DefaultTemplate>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const client = initializeApollo()
+  const response = await client.query({
+    query: getCategorias
+  })
+
+  const { categorias } = response.data
+
+  return {
+    props: {
+      categorias
+    },
+    revalidate: 60
+  }
 }
 
 export default Sobre

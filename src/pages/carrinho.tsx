@@ -25,12 +25,16 @@ import { ProductProps } from 'types/ProductProps'
 import Paragraph from 'components/Paragraph'
 import { useCookies } from 'react-cookie'
 import { useRouter } from 'next/router'
+import { getCategorias } from 'graphql/queryes/categorias'
 
 type Props = {
   tier: ProductProps[]
+  categorias: Array<{
+    nome: string
+  }>
 }
 
-const Carrinho = ({ tier }: Props) => {
+const Carrinho = ({ tier, categorias = [] }: Props) => {
   const { server, cart, setCart } = useStateContext()
   const { products, total } = cart
   const [cep, setCep] = useState('')
@@ -154,7 +158,7 @@ const Carrinho = ({ tier }: Props) => {
   // }, [])
   if (!products[0]) {
     return (
-      <DefaultTemplate>
+      <DefaultTemplate categorias={categorias}>
         <PaddingWrapper>
           <HorizontalPaddingWrapper>
             <Heading>Seu carrinho está vazio!</Heading>
@@ -170,6 +174,7 @@ const Carrinho = ({ tier }: Props) => {
               <GridWrapper>
                 {tier.map((product, index) => (
                   <ProductCard
+                    id={product.id}
                     key={index}
                     name={product.nome}
                     image={server + product.cover.url}
@@ -227,7 +232,7 @@ const Carrinho = ({ tier }: Props) => {
   }
 
   return (
-    <DefaultTemplate>
+    <DefaultTemplate categorias={categorias}>
       <PaddingWrapper>
         <HorizontalPaddingWrapper>
           <Heading margin="0 0 30px 0">MEU CARRINHO</Heading>
@@ -431,6 +436,7 @@ const Carrinho = ({ tier }: Props) => {
             <GridWrapper>
               {tier.map((product, index) => (
                 <ProductCard
+                  id={product.id}
                   key={index}
                   name={product.nome}
                   image={server + product.cover.url}
@@ -453,11 +459,17 @@ export const getStaticProps: GetStaticProps = async () => {
     query: getTierProducts
   })
   const tierList = data.destaque.produtos.map((produto: any) => produto.produto)
-  console.log(tierList)
+
+  const response = await client.query({
+    query: getCategorias
+  })
+
+  const { categorias } = response.data
 
   return {
     props: {
-      tier: data.destaque.produtos.map((produto: any) => produto.produto)
+      tier: data.destaque.produtos.map((produto: any) => produto.produto),
+      categorias
     },
     revalidate: 60
   }

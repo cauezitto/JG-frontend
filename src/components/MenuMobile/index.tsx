@@ -4,7 +4,13 @@ import Link from 'next/link'
 import { IoIosArrowForward } from 'react-icons/io'
 import { useCookies } from 'react-cookie'
 
-const MenuMobile = () => {
+export type HeaderProps = {
+  categorias: Array<{
+    nome: string
+  }>
+}
+
+const MenuMobile = ({ categorias = [] }: HeaderProps) => {
   const [cookie, setCookie] = useCookies(['user'])
   return (
     <S.Wrapper>
@@ -22,35 +28,13 @@ const MenuMobile = () => {
           </Link>
         </S.AccountWrapper>
       )}
-      <Link href="/loja">
-        <S.NavigationLink>
-          Clube nacional <IoIosArrowForward />
-        </S.NavigationLink>
-      </Link>
-
-      <Link href="/loja">
-        <S.NavigationLink>
-          Clube nacional <IoIosArrowForward />
-        </S.NavigationLink>
-      </Link>
-
-      <Link href="/loja">
-        <S.NavigationLink>
-          Clube nacional <IoIosArrowForward />
-        </S.NavigationLink>
-      </Link>
-
-      <Link href="/loja">
-        <S.NavigationLink>
-          Clube nacional <IoIosArrowForward />
-        </S.NavigationLink>
-      </Link>
-
-      <Link href="/loja">
-        <S.NavigationLink>
-          Clube nacional <IoIosArrowForward />
-        </S.NavigationLink>
-      </Link>
+      {categorias.map((categoria, index) => (
+        <Link href={`/loja?categorias=${categoria.nome}`} key={index}>
+          <S.NavigationLink>
+            {categoria.nome} <IoIosArrowForward />
+          </S.NavigationLink>
+        </Link>
+      ))}
 
       <S.DefaultPagesNavigationWrapper>
         <Link href="/">

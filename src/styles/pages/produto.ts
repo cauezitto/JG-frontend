@@ -93,7 +93,22 @@ export const ProductAside = styled.aside`
 export const ProductReference = styled.span`
   ${({ theme }) => css`
     /* padding: ${theme.spacings.large} 0; */
+    margin-bottom: ${theme.spacings.xxsmall};
+  `}
+`
+
+export const Add2Favorites = styled.span`
+  ${({ theme }) => css`
+    /* padding: ${theme.spacings.large} 0; */
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
     margin-bottom: ${theme.spacings.medium};
+    cursor: pointer;
+
+    svg {
+      color: ${theme.colors.brown};
+    }
   `}
 `
 
@@ -227,5 +242,23 @@ export const SizeButton = styled.div<SizeButtonProps>`
       color: ${theme.colors.white100};
       background-color: ${theme.colors.brown};
     }
+  `}
+`
+
+type MiniCartWraperProps = {
+  show?: boolean
+}
+export const MiniCartWrapper = styled.div<MiniCartWraperProps>`
+  ${({ show }) => css`
+    position: fixed;
+    z-index: 20;
+    margin: auto;
+    transition: 1s;
+    right: -100%;
+    ${show &&
+    css`
+      transition: 1s;
+      right: 0;
+    `}
   `}
 `

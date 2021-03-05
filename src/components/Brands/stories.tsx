@@ -12,35 +12,35 @@ Default.args = {
   brands: [
     {
       url: 'https://logodownload.org/wp-content/uploads/2016/11/nba-logo-1.png',
-      alt: 'nike'
+      alternativeText: 'nike'
     },
     {
       url: 'https://logodownload.org/wp-content/uploads/2016/11/nba-logo-1.png',
-      alt: 'nike'
+      alternativeText: 'nike'
     },
     {
       url: 'https://logodownload.org/wp-content/uploads/2016/11/nba-logo-1.png',
-      alt: 'nike'
+      alternativeText: 'nike'
     },
     {
       url: 'https://logodownload.org/wp-content/uploads/2016/11/nba-logo-1.png',
-      alt: 'nike'
+      alternativeText: 'nike'
     },
     {
       url: 'https://logodownload.org/wp-content/uploads/2016/11/nba-logo-1.png',
-      alt: 'nike'
+      alternativeText: 'nike'
     },
     {
       url: 'https://logodownload.org/wp-content/uploads/2016/11/nba-logo-1.png',
-      alt: 'nike'
+      alternativeText: 'nike'
     },
     {
       url: 'https://logodownload.org/wp-content/uploads/2016/11/nba-logo-1.png',
-      alt: 'nike'
+      alternativeText: 'nike'
     },
     {
       url: 'https://logodownload.org/wp-content/uploads/2016/11/nba-logo-1.png',
-      alt: 'nike'
+      alternativeText: 'nike'
     }
   ]
 }

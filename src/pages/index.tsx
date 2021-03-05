@@ -16,23 +16,36 @@ import { useStateContext } from 'context/index'
 import { GetStaticProps } from 'next'
 import { ProductProps } from 'types/ProductProps'
 import { getTierProducts } from 'graphql/queryes/produtos'
+import { getCategorias } from 'graphql/queryes/categorias'
+import { homeQuery } from 'graphql/queryes/home'
 type HomeProps = {
   produtos: ProductProps[]
+  categorias: Array<{
+    nome: string
+  }>
+  marcas: Array<{
+    url: string
+    alternativeText: string
+  }>
 }
 
-export default function Home({ produtos }: HomeProps) {
+export default function Home({
+  produtos,
+  categorias = [],
+  marcas = []
+}: HomeProps) {
   const { server } = useStateContext()
   return (
-    <DefaultTemplate>
+    <DefaultTemplate categorias={categorias}>
       <br />
       <Banner
         img="/img/bannerHome1.jpeg"
         title="CAMISETAS PERSONALIZADAS"
-        description="O seu estilo é tambem o nosso"
+        description="O seu estilo também é o nosso"
       />
       <PaddingWrapper>
         <HorizontalPaddingWrapper padding="xxlarge">
-          <Brands brands={brandsMock} />
+          <Brands brands={marcas} />
         </HorizontalPaddingWrapper>
         <Heading margin="30px 0" role="h2">
           NOSSOS PRODUTOS
@@ -41,6 +54,7 @@ export default function Home({ produtos }: HomeProps) {
           {produtos.map((product, index) => (
             <div className="center" key={index}>
               <ProductCard
+                id={product.id}
                 name={product.nome}
                 price={product.preco}
                 image={server + product.cover.url}
@@ -69,12 +83,16 @@ export default function Home({ produtos }: HomeProps) {
 export const getStaticProps: GetStaticProps = async () => {
   const client = initializeApollo()
 
-  const { data } = await client.query({ query: getTierProducts })
+  const categoriesResponse = await client.query({
+    query: homeQuery
+  })
+  const { categorias, destaque } = categoriesResponse.data
 
-  // console.log(data.destaque.produtos[0])
   return {
     props: {
-      produtos: data.destaque.produtos.map((produto: any) => produto.produto)
+      produtos: destaque.produtos.map((produto: any) => produto.produto),
+      marcas: destaque.marcas.logo,
+      categorias
     },
     revalidate: 60
   }

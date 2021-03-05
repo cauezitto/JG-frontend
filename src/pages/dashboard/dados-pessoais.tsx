@@ -27,9 +27,9 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   let user = {}
   let error = false
 
-  console.log(cookies)
+  // console.log(cookies)
   if (!cookies.token) {
-    console.log('redirecionado')
+    // console.log('redirecionado')
     return {
       redirect: {
         destination: '/login',
@@ -45,10 +45,10 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
       }
     })
     .then((response) => {
-      console.log('sucesso na requisição')
+      // console.log('sucesso na requisição')
       const { data } = response
 
-      console.log(data)
+      // console.log(data)
       user = {
         username: data.username,
         email: data.email,
@@ -65,7 +65,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
       }
     })
     .catch((err) => {
-      console.log(err)
+      // console.log(err)
       error = true
     })
 
@@ -78,7 +78,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
     }
   }
 
-  console.log(user)
+  // console.log(user)
   return {
     props: user // will be passed to the page component as props
   }

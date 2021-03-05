@@ -4,7 +4,7 @@ import { Props } from '.'
 export const Wrapper = styled.div<Props>`
   ${({ theme, show }) => css`
     width: 600px;
-    position: absolute;
+    position: fixed;
     margin: auto;
     width: 100vw;
     height: 100vh;

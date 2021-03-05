@@ -14,10 +14,19 @@ import {
 import { HorizontalPaddingWrapper } from 'styles/pages/home'
 import VirtueCard from 'components/VirtueCard'
 import Button from 'components/Button'
+import { GetStaticProps } from 'next'
+import { getCategorias } from 'graphql/queryes/categorias'
+import { initializeApollo } from 'utils/apollo'
 
-const Sobre = () => {
+type AboutPageProps = {
+  categorias: Array<{
+    nome: string
+  }>
+}
+
+const Sobre = ({ categorias = [] }: AboutPageProps) => {
   return (
-    <DefaultTeamplate>
+    <DefaultTeamplate categorias={categorias}>
       <Banner
         img="/img/sobre/banner.png"
         title="SOBRE NÓS"
@@ -105,6 +114,22 @@ const Sobre = () => {
       </Go2Contact>
     </DefaultTeamplate>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const client = initializeApollo()
+  const response = await client.query({
+    query: getCategorias
+  })
+
+  const { categorias } = response.data
+
+  return {
+    props: {
+      categorias
+    },
+    revalidate: 60
+  }
 }
 
 export default Sobre

@@ -22,6 +22,8 @@ import PaddingWrapper from 'components/PaddingWrapper'
 import DefaultTemplate from 'templates/Default'
 import { HorizontalPaddingWrapper } from 'styles/pages/home'
 import { useStateContext } from 'context'
+import { getCategorias } from 'graphql/queryes/categorias'
+import { initializeApollo } from 'utils/apollo'
 
 type Props = {
   products: ProductProps[]
@@ -34,12 +36,21 @@ type Props = {
     login: boolean
     unauthorized: boolean
   }
+  categorias: Array<{
+    nome: string
+  }>
 }
 
 export const getServerSideProps: GetServerSideProps = async ({
   req,
   params = { id: 1 }
 }) => {
+  const client = initializeApollo()
+  const response = await client.query({
+    query: getCategorias
+  })
+
+  const { categorias } = response.data
   const cookies = parseCookies(req)
   let favoriteList
   let friends = null
@@ -53,7 +64,8 @@ export const getServerSideProps: GetServerSideProps = async ({
         err: {
           login: true,
           unauthorzed: false
-        }
+        },
+        categorias
       }
     }
   }
@@ -67,7 +79,8 @@ export const getServerSideProps: GetServerSideProps = async ({
         err: {
           login: false,
           unauthorized: true
-        }
+        },
+        categorias
       }
     }
   }
@@ -79,7 +92,6 @@ export const getServerSideProps: GetServerSideProps = async ({
       }
     })
     .then((response) => {
-      console.log('requisição feita com sucesso')
       favoriteList = response.data.produtos
       console.log(typeof params.id, (decoded as any).id)
       if ((decoded as any).id == params.id) {
@@ -87,8 +99,6 @@ export const getServerSideProps: GetServerSideProps = async ({
       }
     })
     .catch((error) => {
-      console.log(error)
-      console.log('erro na requisição')
       err = true
     })
 
@@ -99,7 +109,8 @@ export const getServerSideProps: GetServerSideProps = async ({
         err: {
           login: false,
           unauthorized: true
-        }
+        },
+        categorias
       }
     }
   }
@@ -111,12 +122,13 @@ export const getServerSideProps: GetServerSideProps = async ({
       err: {
         login: false,
         unauthorized: err ? true : false
-      }
+      },
+      categorias
     }
   }
 }
 
-const Favorites = ({ products, err, amigos, id }: Props) => {
+const Favorites = ({ products, err, amigos, id, categorias }: Props) => {
   const router = useRouter()
   const [showList, setShowList] = useState(false)
   const { server } = useStateContext()
@@ -167,7 +179,7 @@ const Favorites = ({ products, err, amigos, id }: Props) => {
   }
 
   return (
-    <DefaultTemplate>
+    <DefaultTemplate categorias={categorias}>
       <Favoritos>
         {amigos && (
           <div
@@ -198,6 +210,7 @@ const Favorites = ({ products, err, amigos, id }: Props) => {
                 {products.map((product, index) => (
                   <ProductCard
                     key={index}
+                    id={product.id}
                     name={product.nome}
                     price={product.preco}
                     image={server + product.cover.url}
@@ -240,19 +253,25 @@ const Favorites = ({ products, err, amigos, id }: Props) => {
                   </div>
 
                   <div className="options">
-                    <a href="#">
+                    <a
+                      href={`https://facebook.com/sharer/sharer.php?u=https://jgemporio.com.br/favoritos/${id}`}
+                    >
                       <div className="option facebook">
                         <FaFacebookF /> &nbsp; Facebook
                       </div>
                     </a>
 
-                    <a href="#">
+                    <a
+                      href={`https://twitter.com/intent/tweet?url=https://jgemporio.com.br/favoritos/${id}`}
+                    >
                       <div className="option twitter">
                         <FaTwitter /> &nbsp; Twitter
                       </div>
                     </a>
 
-                    <a href="#">
+                    <a
+                      href={`whatsapp://send?text=https://jgemporio.com.br/favoritos/${id}`}
+                    >
                       <div className="option whatsapp">
                         <FaWhatsapp /> &nbsp; Whatsapp
                       </div>

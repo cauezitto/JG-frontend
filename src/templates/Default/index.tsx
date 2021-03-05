@@ -5,14 +5,17 @@ import CopyAndPayment from 'components/CopyAndPayment'
 
 type TemplateProps = {
   children: React.ReactNode
+  categorias: Array<{
+    nome: string
+  }>
 }
 
-const Default = ({ children }: TemplateProps) => {
+const Default = ({ children, categorias }: TemplateProps) => {
   return (
     <>
-      <Header />
+      <Header categorias={categorias} />
       {children}
-      <Footer />
+      <Footer categorias={categorias} />
       <CopyAndPayment />
     </>
   )

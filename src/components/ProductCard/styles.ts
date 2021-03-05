@@ -7,6 +7,7 @@ export const Wrapper = styled.a`
     background-color: ${theme.colors.white100};
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: 0.5s;
+    flex-direction: column;
     .cart-button {
       /* transition: 0.5s; */
       visibility: hidden;

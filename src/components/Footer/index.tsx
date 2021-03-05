@@ -9,7 +9,13 @@ import { FaInstagram } from 'react-icons/fa'
 // import CopyAndPayment from 'components/CopyAndPayment'
 import Link from 'next/link'
 
-const Footer = () => (
+export type FooterProps = {
+  categorias: Array<{
+    nome: string
+  }>
+}
+
+const Footer = ({ categorias = [] }: FooterProps) => (
   <S.Wrapper>
     <PaddingWrapper>
       <Heading
@@ -45,29 +51,11 @@ const Footer = () => (
               CATEGORIAS
             </Heading>
 
-            <Link href="/">
-              <S.NavigationLink>Time Nacional</S.NavigationLink>
-            </Link>
-
-            <Link href="/">
-              <S.NavigationLink>Time Nacional</S.NavigationLink>
-            </Link>
-
-            <Link href="/">
-              <S.NavigationLink>Time Nacional</S.NavigationLink>
-            </Link>
-
-            <Link href="/">
-              <S.NavigationLink>Time Nacional</S.NavigationLink>
-            </Link>
-
-            <Link href="/">
-              <S.NavigationLink>Time Nacional</S.NavigationLink>
-            </Link>
-
-            <Link href="/">
-              <S.NavigationLink>Time Nacional</S.NavigationLink>
-            </Link>
+            {categorias.map((categoria, index) => (
+              <Link key={index} href={`/loja?categorias=${categoria.nome}`}>
+                <S.NavigationLink>{categoria.nome}</S.NavigationLink>
+              </Link>
+            ))}
           </S.Nav>
 
           <S.Nav>

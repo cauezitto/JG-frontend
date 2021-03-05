@@ -1,13 +1,22 @@
 import React from 'react'
-import termos from 'mocks/termos'
 import PaddingWrapper from 'components/PaddingWrapper'
 import DefaultTemplate from 'templates/Default'
 import { HorizontalPaddingWrapper } from 'styles/pages/home'
 import { RulesWrapper } from 'styles/pages/regulamentos'
 import Banner from 'components/Banner'
-const Regulamentos = () => {
+import { GetStaticProps } from 'next'
+import { initializeApollo } from 'utils/apollo'
+import { getTermos } from 'graphql/queryes/termos'
+
+type RulesPageProps = {
+  categorias: Array<{
+    nome: string
+  }>
+  termos: string
+}
+const Regulamentos = ({ categorias = [], termos = '' }: RulesPageProps) => {
   return (
-    <DefaultTemplate>
+    <DefaultTemplate categorias={categorias}>
       <Banner
         title="TROCA & DEVOLUÇÃO"
         description="Satisfação garantida ou seu dinheiro de volta"
@@ -20,6 +29,23 @@ const Regulamentos = () => {
       </PaddingWrapper>
     </DefaultTemplate>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const client = initializeApollo()
+  const response = await client.query({
+    query: getTermos
+  })
+
+  const { categorias, termo } = response.data
+
+  return {
+    props: {
+      categorias,
+      termos: termo.texto
+    },
+    revalidate: 60
+  }
 }
 
 export default Regulamentos

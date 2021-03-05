@@ -10,6 +10,7 @@ type UserProps = {
   cidade?: string
   estado?: string
   numero?: string
+  favorites?: number[]
 }
 
 export default UserProps
