@@ -294,7 +294,7 @@ const Produto = ({ product, categorias }: ProductPageProps) => {
           property="og:image"
           content={
             process.env.NEXT_PUBLIC_SERVER_HOST ||
-            'localhost:1337' + product.cover
+            'localhost:1337' + product.cover.url
           }
         />
       </Head>
