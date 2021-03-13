@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "schema:download": "apollo client:download-schema --endpoint=http://localhost:1337/graphql schema-temp.gql",
-    "start": "next start",
+    "start": "next build && next start",
     "lint": "eslint src --max-warnings=0",
     "test": "jest",
     "test:watch": "yarn test --watch",
