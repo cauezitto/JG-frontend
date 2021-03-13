@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import DefaultTemplate from 'templates/Default'
 import PaymentBanner from 'components/PaymentsBanner'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
-import productsMock from 'mocks/products.json'
 import Heading from 'components/Heading'
 import PaddingWrapper from 'components/PaddingWrapper'
 import GridWrapper from 'components/GridWrapper'
@@ -45,6 +44,7 @@ import Head from 'next/head'
 import { ProductProps } from 'types/ProductProps'
 
 type ProductPageProps = {
+  tierList: ProductProps[]
   product: {
     id: number
     nome: string
@@ -91,7 +91,7 @@ const ProductPage = (props: ProductPageProps) => {
   return <Produto {...props} />
 }
 
-const Produto = ({ product, categorias }: ProductPageProps) => {
+const Produto = ({ product, categorias, tierList }: ProductPageProps) => {
   const {
     id,
     resumo,
@@ -496,18 +496,19 @@ const Produto = ({ product, categorias }: ProductPageProps) => {
                           <th>Prazo</th>
                         </tr>
 
-                        {shippingOptions?.map((option) => (
-                          <tr key={option?.id}>
-                            <td>{option?.name} </td>
-                            <td>
-                              {priceHandler.priceNumberToReadblePrice(
-                                Number(option?.price / 2)
-                              )}{' '}
-                            </td>
-                            <td>{`15 dias(s)`} </td>
-                            {/* <td>{`${option?.delivery_time} dias(s)`} </td> */}
-                          </tr>
-                        ))}
+                        <>
+                          {shippingOptions?.map((option, index) => (
+                            <tr key={index}>
+                              <td>{option?.name} </td>
+                              <td>
+                                {priceHandler.priceNumberToReadblePrice(
+                                  Number(option?.price / 2)
+                                )}
+                              </td>
+                              <td>{`15 dias(s)`} </td>
+                            </tr>
+                          ))}
+                        </>
                       </table>
 
                       <span className="disclaimer">
@@ -531,7 +532,7 @@ const Produto = ({ product, categorias }: ProductPageProps) => {
           </Heading>
 
           <GridWrapper>
-            {productsMock?.map((product, index) => (
+            {tierList.map((product, index) => (
               <ProductCard
                 id={product.id}
                 key={index}
@@ -575,7 +576,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   const client = initializeApollo()
-  // console.log('==============================')
 
   const slug = params?.slug as string
 
@@ -594,13 +594,14 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
     query: getCategorias
   })
 
-  const { produtos } = data
+  const { produtos, destaque } = data
   const { categorias } = categoriesResponse.data
 
   return {
     props: {
       product: produtos[0],
-      categorias
+      categorias,
+      tierList: destaque.produtos.map((produto: any) => produto.produto)
     },
     revalidate: 60
   }

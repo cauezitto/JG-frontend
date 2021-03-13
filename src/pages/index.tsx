@@ -4,19 +4,14 @@ import DefaultTemplate from 'templates/Default'
 import AboutSection from 'components/AboutSection'
 import Brands from 'components/Brands'
 import Heading from 'components/Heading'
-import productsMock from 'mocks/products.json'
-import costumersMock from 'mocks/costumers.json'
 import ProductCard from 'components/ProductCard'
 import PaddingWrapper from 'components/PaddingWrapper'
 import GridWrapper from 'components/GridWrapper'
 import Costumers from 'components/Costumers'
 import { HorizontalPaddingWrapper } from 'styles/pages/home'
-import brandsMock from 'mocks/brands.json'
 import { useStateContext } from 'context/index'
 import { GetStaticProps } from 'next'
 import { ProductProps } from 'types/ProductProps'
-import { getTierProducts } from 'graphql/queryes/produtos'
-import { getCategorias } from 'graphql/queryes/categorias'
 import { homeQuery } from 'graphql/queryes/home'
 type HomeProps = {
   produtos: ProductProps[]
@@ -27,12 +22,20 @@ type HomeProps = {
     url: string
     alternativeText: string
   }>
+  costumers: Array<{
+    nome: string
+    depoimento: string
+    foto: {
+      url: string
+    }
+  }>
 }
 
 export default function Home({
   produtos,
   categorias = [],
-  marcas = []
+  marcas = [],
+  costumers
 }: HomeProps) {
   const { server } = useStateContext()
   return (
@@ -68,7 +71,7 @@ export default function Home({
       <PaddingWrapper>
         <HorizontalPaddingWrapper padding="xxxlarge">
           <Costumers
-            costumers={costumersMock.map((costumer) => ({
+            costumers={costumers.map((costumer) => ({
               name: costumer.nome,
               img: server + costumer.foto.url,
               testimony: costumer.depoimento
@@ -86,13 +89,14 @@ export const getStaticProps: GetStaticProps = async () => {
   const categoriesResponse = await client.query({
     query: homeQuery
   })
-  const { categorias, destaque } = categoriesResponse.data
+  const { categorias, destaque, depoimentos } = categoriesResponse.data
 
   return {
     props: {
       produtos: destaque.produtos.map((produto: any) => produto.produto),
       marcas: destaque.marcas.logo,
-      categorias
+      categorias,
+      costumers: depoimentos
     },
     revalidate: 60
   }

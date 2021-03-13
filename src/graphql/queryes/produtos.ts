@@ -45,6 +45,19 @@ export const getProductBySlug = gql`
         url
       }
     }
+    destaque {
+      produtos {
+        produto {
+          id
+          nome
+          preco
+          slug
+          cover {
+            url
+          }
+        }
+      }
+    }
   }
 `
 

@@ -2,6 +2,13 @@ import { gql } from '@apollo/client'
 
 export const homeQuery = gql`
   query getHomeData {
+    depoimentos {
+      nome
+      depoimento
+      foto {
+        url
+      }
+    }
     categorias {
       nome
     }
