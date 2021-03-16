@@ -46,7 +46,7 @@ const ProductCard = ({ id, name, image, price, slug }: ProductProps) => {
   }, [])
 
   return (
-    <Link href={`/produto/${slug}`}>
+    <Link href={`/produto/${slug}`} passHref>
       <S.Wrapper>
         <S.favoriteWrapper>
           {isFavorite ? <FaHeart /> : <FiHeart />}

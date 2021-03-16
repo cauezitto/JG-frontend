@@ -25,7 +25,7 @@ const PaymentsBanner = () => (
         </S.Info> */}
           <S.Info mobile>
             {' '}
-            <FiCreditCard /> &nbsp; <b>PARCELE</b> &nbsp; EM ATÉ 3X
+            <FiCreditCard /> &nbsp; <b>PARCELE</b> &nbsp; EM ATÉ 12X
           </S.Info>
           <S.Info mobile>
             {' '}
