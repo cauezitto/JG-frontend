@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 export const Wrapper = styled.a`
   ${({ theme }) => css`
     position: relative;
+    text-decoration: none;
     width: 30rem;
     background-color: ${theme.colors.white100};
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);

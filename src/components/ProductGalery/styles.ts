@@ -303,6 +303,11 @@ export const Wrapper = styled.div`
       display: none;
     }
 
+    .mobile img {
+      min-width: 90vw;
+      min-height: 100px;
+    }
+
     @media (max-width: ${theme.breakPoints.tablet}) {
       .mobile {
         display: inline;

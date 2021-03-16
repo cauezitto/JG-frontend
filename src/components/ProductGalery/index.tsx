@@ -13,8 +13,8 @@ export type GaleryProps = {
 
 const settings = {
   dots: false,
-  infinite: true,
-  autoplay: true,
+  infinite: false,
+  autoplay: false,
   autoplaySpeed: 5000,
   speed: 500,
   slidesToShow: 1,

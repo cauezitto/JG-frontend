@@ -67,14 +67,14 @@ const Header = ({ categorias = [] }: HeaderProps) => {
             </S.ExteralLink>
             <div className="divisor" />
             <S.ExteralLink
-              href="mailto: contato@jgemporiodamalha.com.br"
+              href="mailto: contato@jgemporiodamalha.com"
               className="desktop"
             >
-              <FiMail /> &nbsp; contato@jgemporiodamalha
+              <FiMail /> &nbsp; contato@jgemporiodamalha.com
             </S.ExteralLink>
 
             <S.ExteralLink
-              href="mailto: contato@jgemporiodamalha.com.br"
+              href="mailto: contato@jgemporiodamalha.com"
               className="mobile"
             >
               <FiMail />

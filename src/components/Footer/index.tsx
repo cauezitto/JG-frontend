@@ -136,9 +136,9 @@ const Footer = ({ categorias = [] }: FooterProps) => (
               <FiPhone /> &nbsp; 98252-2620
             </S.NavigationLink>
 
-            <S.NavigationLink href="mailto:contato@jgemporiodamalha.com.br">
+            <S.NavigationLink href="mailto:contato@jgemporiodamalha.com">
               {' '}
-              <FiMail /> &nbsp; contato@jgemporiodamalha.com.br
+              <FiMail /> &nbsp; contato@jgemporiodamalha.com
             </S.NavigationLink>
           </S.Nav>
         </S.NavsContainer>
