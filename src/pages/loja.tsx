@@ -41,7 +41,7 @@ const Loja = ({
   const { data, loading, fetchMore } = useQueryProducts({
     notifyOnNetworkStatusChange: true,
     variables: {
-      limit: 2,
+      limit: 4,
       where: parseQueryStringToWhere({ queryString: query, filterItems })
     }
   })
@@ -62,7 +62,7 @@ const Loja = ({
     data?.produtos.length < (data?.produtosConnection?.values?.length || 0)
 
   const handleShowMore = () => {
-    fetchMore({ variables: { limit: 2, start: data?.produtos?.length } })
+    fetchMore({ variables: { limit: 4, start: data?.produtos?.length } })
   }
 
   const handleFilter = (items: ParsedUrlQueryInput) => {
@@ -165,7 +165,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const response = await client.query({
     query: FilterProducts,
     variables: {
-      limit: 2,
+      limit: 4,
       where: parseQueryStringToWhere({ queryString: query, filterItems })
     }
   })

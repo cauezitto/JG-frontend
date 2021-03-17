@@ -57,11 +57,11 @@ export default function Home({
           {produtos.map((product, index) => (
             <div className="center" key={index}>
               <ProductCard
-                id={product.id}
-                name={product.nome}
-                price={product.preco}
-                image={server + product.cover.url}
-                slug={product.slug}
+                id={product?.id}
+                name={product?.nome}
+                price={product?.preco}
+                image={server + product?.cover.url}
+                slug={product?.slug}
               />
             </div>
           ))}
